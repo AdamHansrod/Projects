@@ -27,4 +27,4 @@ def get_next_prime_factor(n, f):
 
 print 'Prime factors of: '
 n = input()
-print ' is ' + str(primeFactors(n))
+print ' are ' + str(primeFactors(n))
