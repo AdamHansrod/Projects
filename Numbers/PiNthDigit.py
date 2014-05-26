@@ -1,35 +1,12 @@
-def pi(nthDigit, iterationsLimit):
-    print 'Starting Calculation'
-    step = 1.0 / iterationsLimit
-    sum = 0.0
-    for iteration in range(0,iterationsLimit):
-        print 'Iteration ' + str(iteration)
-        x = (step +0.5) * step
-        sum += 4.0 / (1.0 + x * x)
-    pi = step * sum
+import math
+
+def calcPi(n): 
+    pi = 0 
+    for k in range(n): 
+        pi += (4./(8.*k+1.) - 2./(8.*k+4.) - 1./(8.*k+5.) - 1./(8.*k+6.)) / 16.**k 
     return pi
 
-
-print str(pi(3,10000))
-
-
-
-##
-##
-##    
-##int numSteps = 1000000000  ;
-##
-##          double step = 1.0 / (double) numSteps;
-##
-##          double sum = 0.0;
-##
-##          for(int i = 0 ; i < numSteps ; i++){
-##              double x = (i + 0.5) * step ;
-##              sum += 4.0 / (1.0 + x * x);
-##          }
-##
-##          double pi = step * sum ;
-##
-##          long endTime = System.currentTimeMillis();
-##
-##          System.out.println("Value of pi: " + pi);
+calculatedPi = calcPi(20)
+print 'Calculated value   ' + "{:2f}".format(calculatedPi)
+print 'Actual value of pi ' + str(math.pi)
+print 'Difference         ' + str(math.pi - calculatedPi)
