@@ -6,4 +6,11 @@ def findNumberOfTiles(floorWidth,floorHeight,tileWidth,tileHeight):
 def findCost(floorWidth, floorHeight, tileWidth, tileHeight,costofTile):
     return costofTile * findNumberOfTiles(floorWidth,floorHeight,tileWidth,tileHeight)
 
-print str(findCost(50.2,50.2,1.5,1.5,10.50))
+
+tileCost = input('Enter the cost of tile: ')
+floorWidth = input('Enter the width of the floor: ')
+floorHeight = input('Enter the height of the floor: ')
+tileWidth = input('Enter the width of tiles: ')
+tileHeight = input('Enter the height of tiles: ')
+
+print str(findCost(floorWidth,floorHeight,tileWidth,tileHeight,tileCost))
