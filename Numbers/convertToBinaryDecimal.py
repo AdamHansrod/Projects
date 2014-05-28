@@ -20,9 +20,20 @@ def convertToBinary(decimalNumber,numberOfBits):
         binaryNumber.append(count)
     return ''.join(map(str, binaryNumber)) ##return a string
 
+def convertToDecimal(binaryString):
+    binary = list(binaryString)
+    columns = getListOfBinaryColumns(len(binary))##autosize the number of columns
+    decimal = 0
+    for column,value in zip(reversed(columns),binary):
+        if (value == '1'):
+            decimal += column
+    return decimal
     
 
-binary = convertToBinary(255,8)
+number = 255
+binary = convertToBinary(number,8)
 print binary
+decimal = convertToDecimal(binary)
+print decimal
 
-
+print number == decimal
