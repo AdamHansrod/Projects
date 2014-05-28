@@ -1,4 +1,3 @@
-def convertToBinary(decimalNumber,numberOfBits):
 def getListOfBinaryColumns(numberOfBits):
     columns = []
     for column in range(0,numberOfBits):
